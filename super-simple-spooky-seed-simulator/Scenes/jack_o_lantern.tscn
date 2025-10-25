@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8fvy67786el2"]
+
+[ext_resource type="Script" uid="uid://ceduy1waepv2x" path="res://Scripts/jack_o_lantern.gd" id="1_giqco"]
+
+[node name="Jack_o_Lantern" type="CharacterBody2D"]
+script = ExtResource("1_giqco")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
