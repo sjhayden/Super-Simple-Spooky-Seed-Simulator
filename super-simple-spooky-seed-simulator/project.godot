@@ -17,3 +17,8 @@ config/icon="res://icon.svg"
 [dotnet]
 
 project/assembly_name="Super Simple Spooky Seed Simulator"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+2d/canvas_textures/default_texture_filter=0
