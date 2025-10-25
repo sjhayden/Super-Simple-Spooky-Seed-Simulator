@@ -1,10 +1,58 @@
-[gd_scene load_steps=2 format=3 uid="uid://c8fvy67786el2"]
+[gd_scene load_steps=8 format=3 uid="uid://c8fvy67786el2"]
 
 [ext_resource type="Script" uid="uid://ceduy1waepv2x" path="res://Scripts/jack_o_lantern.gd" id="1_giqco"]
+[ext_resource type="Texture2D" uid="uid://b5frltrdkrhpu" path="res://Assets/Characters.png" id="2_wb8q7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4ax6"]
+radius = 6.0
+height = 16.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x61tp"]
+atlas = ExtResource("2_wb8q7")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ad81n"]
+atlas = ExtResource("2_wb8q7")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8r162"]
+atlas = ExtResource("2_wb8q7")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_38bgr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x61tp")
+}],
+"loop": true,
+"name": &"after_1_hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ad81n")
+}],
+"loop": true,
+"name": &"after_2_hits",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8r162")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Jack_o_Lantern" type="CharacterBody2D"]
 script = ExtResource("1_giqco")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_g4ax6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -1)
+sprite_frames = SubResource("SpriteFrames_38bgr")
