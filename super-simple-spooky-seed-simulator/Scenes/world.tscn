@@ -1,15 +1,19 @@
-[gd_scene load_steps=5 format=4 uid="uid://dp2jr4yn6hvgi"]
+[gd_scene load_steps=6 format=4 uid="uid://dp2jr4yn6hvgi"]
 
 [ext_resource type="PackedScene" uid="uid://dtncctudm55t6" path="res://Scenes/player.tscn" id="1_a02cp"]
 [ext_resource type="Texture2D" uid="uid://bsh4ctdvvmqwn" path="res://Assets/TileMap16x16.png" id="1_go701"]
+[ext_resource type="PackedScene" uid="uid://d3b2i1ulkyxcp" path="res://Scenes/plant_manager.tscn" id="3_5a7ea"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5a7ea"]
 texture = ExtResource("1_go701")
 0:0/0 = 0
 1:0/0 = 0
+1:0/0/custom_data_0 = true
 2:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_8j60k"]
+custom_data_layer_0/name = "plantable"
+custom_data_layer_0/type = 1
 sources/0 = SubResource("TileSetAtlasSource_5a7ea")
 
 [node name="World" type="Node2D"]
@@ -21,3 +25,6 @@ tile_set = SubResource("TileSet_8j60k")
 
 [node name="Player" parent="." instance=ExtResource("1_a02cp")]
 position = Vector2(167.66667, 35.333332)
+
+[node name="plant_manager" parent="." node_paths=PackedStringArray("tile_map") instance=ExtResource("3_5a7ea")]
+tile_map = NodePath("../TileMapLayer")
