@@ -1,10 +1,58 @@
-[gd_scene load_steps=2 format=3 uid="uid://qhjimvsiiqqs"]
+[gd_scene load_steps=8 format=3 uid="uid://qhjimvsiiqqs"]
 
 [ext_resource type="Script" uid="uid://b1ckcypceqqku" path="res://Scripts/corn_plant.gd" id="1_1m1ec"]
+[ext_resource type="Texture2D" uid="uid://dr63eb8783ddp" path="res://Assets/Tilemap_Placeholder_16x16.png" id="2_v4bum"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rdd45"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mpcga"]
+atlas = ExtResource("2_v4bum")
+region = Rect2(0, 34, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r0w7h"]
+atlas = ExtResource("2_v4bum")
+region = Rect2(51, 34, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b73ak"]
+atlas = ExtResource("2_v4bum")
+region = Rect2(34, 34, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jpijp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mpcga")
+}],
+"loop": true,
+"name": &"full_grown",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r0w7h")
+}],
+"loop": true,
+"name": &"growing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b73ak")
+}],
+"loop": true,
+"name": &"sprout",
+"speed": 5.0
+}]
 
 [node name="Corn_Plant" type="Node2D"]
 script = ExtResource("1_1m1ec")
 
 [node name="Area2D" type="Area2D" parent="."]
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_rdd45")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jpijp")
+animation = &"full_grown"
