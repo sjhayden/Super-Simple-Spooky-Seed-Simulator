@@ -4,8 +4,9 @@ const SPEED = 200.0
 var last_direction = Vector2(0, 1)  # Downwards
 var is_attacking = false
 
+@export var plant_manager: PlantManager # Dependency injection yay
 @onready var anim = $AnimatedSprite2D
-@onready var animation_player = $AnimationPlayer
+#@onready var animation_player = $AnimationPlayer
 @onready var attack_pivot = $AttackPivot
 @onready var hitbox_collision = $AttackPivot/SwordHit/HitBox
 
@@ -27,6 +28,9 @@ func _physics_process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("attack") and not is_attacking:
 		perform_attack()
+		
+	if Input.is_action_just_pressed("plant_harvest") and not is_attacking:
+		plant_manager.plant_or_harvest(global_position)
 
 
 func update_animations():

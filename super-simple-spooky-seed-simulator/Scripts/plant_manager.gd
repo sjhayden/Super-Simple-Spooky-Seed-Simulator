@@ -1,3 +1,4 @@
+class_name PlantManager
 extends Node2D
 
 @export var tile_map: TileMapLayer
@@ -16,7 +17,3 @@ func plant_or_harvest(player_coords: Vector2i) -> void:
 		else:
 			plants[tile_coords].harvest()
 		
-func _input(event):
-#	planting with mouse click for testing
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		plant_or_harvest(get_global_mouse_position())
