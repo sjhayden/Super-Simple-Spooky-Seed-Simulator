@@ -56,3 +56,9 @@ shape = SubResource("RectangleShape2D_rdd45")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jpijp")
 animation = &"sprout"
+
+[node name="GrowTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="GrowTimer" to="." method="_on_grow_timer_timeout"]
