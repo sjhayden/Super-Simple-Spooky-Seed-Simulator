@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c8fvy67786el2"]
+[gd_scene load_steps=9 format=3 uid="uid://c8fvy67786el2"]
 
 [ext_resource type="Script" uid="uid://ceduy1waepv2x" path="res://Scripts/jack_o_lantern.gd" id="1_giqco"]
 [ext_resource type="Texture2D" uid="uid://b5frltrdkrhpu" path="res://Assets/Characters.png" id="2_wb8q7"]
@@ -46,7 +46,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Jack_o_Lantern" type="RigidBody2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wb8q7"]
+radius = 21.0
+height = 54.0
+
+[node name="Jack_o_Lantern" type="RigidBody2D" groups=["Enemies"]]
 gravity_scale = 0.0
 script = ExtResource("1_giqco")
 
@@ -60,3 +64,12 @@ shape = SubResource("CapsuleShape2D_g4ax6")
 position = Vector2(0, -7)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_38bgr")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, -6)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_wb8q7")
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

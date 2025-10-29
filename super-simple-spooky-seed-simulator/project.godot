@@ -18,10 +18,16 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameManager="*res://Scripts/game_manager.gd"
+Global="*res://Scripts/global.gd"
 
 [dotnet]
 
 project/assembly_name="Super Simple Spooky Seed Simulator"
+
+[global_group]
+
+Enemies=""
+Player=""
 
 [input]
 
