@@ -15,6 +15,10 @@ run/main_scene="uid://dp2jr4yn6hvgi"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameManager="*res://Scripts/game_manager.gd"
+
 [dotnet]
 
 project/assembly_name="Super Simple Spooky Seed Simulator"

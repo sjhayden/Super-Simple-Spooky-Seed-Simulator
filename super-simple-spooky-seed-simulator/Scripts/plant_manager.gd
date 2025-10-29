@@ -8,8 +8,11 @@ var plants: Dictionary[Vector2i, CornPlant] = {}
 func plant_or_harvest(player_coords: Vector2i) -> void:
 	var tile_coords = tile_map.local_to_map(self.to_local(player_coords))
 	var tile_data = tile_map.get_cell_tile_data(tile_coords)
-	if tile_data.get_custom_data("plantable"):
+	if tile_data != null and tile_data.get_custom_data("plantable"):
 		if tile_coords not in plants or plants[tile_coords] == null:
+			if GameManager.get_num_corns() <= 0:
+				return
+			GameManager.change_num_corns(-1)
 			var corn_plant = corn_plant_scene.instantiate()
 			add_child(corn_plant)
 			corn_plant.position = tile_map.map_to_local(tile_coords)

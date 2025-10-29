@@ -6,13 +6,14 @@ extends Node2D
 var growth_level = 0
 const anim_strings = ["sprout", "growing", "full_grown"]
 const MAX_GROWTH_LEVEL = 2
+var num_corns = 3
 
 func _ready() -> void:
 	anim.play(anim_strings[growth_level]) # unnecessary?
 
 func harvest():
 	if growth_level == MAX_GROWTH_LEVEL:
-		print("harvested")
+		GameManager.change_num_corns(num_corns)
 		queue_free()
 
 
