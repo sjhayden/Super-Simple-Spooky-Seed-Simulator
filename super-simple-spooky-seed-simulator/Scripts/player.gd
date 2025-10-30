@@ -20,7 +20,7 @@ func _physics_process(_delta: float) -> void:
 	if is_attacking:
 		velocity = Vector2.ZERO
 	else:
-		last_direction = direction
+		if direction != Vector2.ZERO: last_direction = direction
 		velocity = direction * SPEED
 	
 	move_and_slide()
@@ -49,7 +49,16 @@ func _physics_process(_delta: float) -> void:
 
 func update_animations():
 	if not is_attacking:
-		anim.play("default")
+		if last_direction.y < 0:
+			anim.play("walk_up")
+		elif last_direction.y > 0:
+			anim.play("walk_down")
+		elif last_direction.x > 0:
+			anim.play("walk_right")
+		elif last_direction.x < 0:
+			anim.play("walk_left")
+		else:
+			anim.play("default")
 
 
 func perform_attack():
