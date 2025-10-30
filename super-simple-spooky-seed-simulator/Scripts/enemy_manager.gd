@@ -25,13 +25,4 @@ func spawn_enemy() -> void:
 	# Set the enemy's position to the random location.
 	enemy.position = spawn_location.position
 
-	# Set the enemy's direction perpendicularish to the path direction.
-	# necessary if enemies will walk on their own?
-	var direction = spawn_location.rotation + PI / 2 + randf_range(-PI / 4, PI / 4)
-
-	# Choose the velocity for the mob.
-	var velocity = Vector2(150.0, 0.0)
-	enemy.velocity = velocity.rotated(direction)
-
-	# Spawn the mob by adding it to the Main scene.
 	add_child(enemy)

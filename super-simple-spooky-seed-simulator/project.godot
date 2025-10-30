@@ -28,6 +28,7 @@ project/assembly_name="Super Simple Spooky Seed Simulator"
 
 Enemies=""
 Player=""
+Plants=""
 
 [input]
 
