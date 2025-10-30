@@ -70,6 +70,7 @@ func perform_attack():
 	damage_zone_collision.disabled = false
 	await get_tree().create_timer(wait_time).timeout
 	damage_zone_collision.disabled = true
+	Global.numEnemiesInHitbox = 0
 	
 	anim.play("attack_down")
 	is_attacking = false

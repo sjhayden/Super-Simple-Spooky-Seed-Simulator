@@ -12,14 +12,16 @@ var eaten_plants_locations = {} # keeps track of plants this jack has already fo
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if area == Global.playerDamageZone:
-		hits_taken += 1
-		if hits_taken == 1:
-			anim.play("after_1_hit")
-		if hits_taken == 2:
-			anim.play("after_2_hits")
-		if hits_taken == 3:
-			GameManager.update_num_killed()
-			queue_free()
+		if Global.numEnemiesInHitbox == 0:
+			Global.numEnemiesInHitbox += 1
+			hits_taken += 1
+			if hits_taken == 1:
+				anim.play("after_1_hit")
+			if hits_taken == 2:
+				anim.play("after_2_hits")
+			if hits_taken == 3:
+				GameManager.update_num_killed()
+				queue_free()
 			
 func _ready() -> void:
 	target = find_nearest_plant_position()
