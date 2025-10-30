@@ -16,7 +16,7 @@ func _on_first_enemy_timer_timeout() -> void:
 func spawn_enemy() -> void:
 	print("spawn")
 	# Create a new instance of the enemy scene.
-	var enemy = enemy_scene.instantiate()
+	var enemy:CharacterBody2D = enemy_scene.instantiate()
 
 	# Choose a random location on Path2D.
 	var spawn_location = $SpawningPath/SpawnLocation
@@ -28,11 +28,10 @@ func spawn_enemy() -> void:
 	# Set the enemy's direction perpendicularish to the path direction.
 	# necessary if enemies will walk on their own?
 	var direction = spawn_location.rotation + PI / 2 + randf_range(-PI / 4, PI / 4)
-	enemy.rotation = direction
 
 	# Choose the velocity for the mob.
 	var velocity = Vector2(150.0, 0.0)
-	enemy.linear_velocity = velocity.rotated(direction)
+	enemy.velocity = velocity.rotated(direction)
 
 	# Spawn the mob by adding it to the Main scene.
 	add_child(enemy)

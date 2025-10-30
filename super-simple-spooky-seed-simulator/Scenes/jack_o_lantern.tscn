@@ -47,22 +47,20 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wb8q7"]
-radius = 21.0
-height = 54.0
+radius = 8.0
+height = 20.0
 
-[node name="Jack_o_Lantern" type="RigidBody2D" groups=["Enemies"]]
-gravity_scale = 0.0
+[node name="Jack_o_Lantern" type="CharacterBody2D" groups=["Enemies"]]
+motion_mode = 1
 script = ExtResource("1_giqco")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -6)
 rotation = 1.5707964
-scale = Vector2(3, 3)
 shape = SubResource("CapsuleShape2D_g4ax6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -7)
-scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_38bgr")
 
 [node name="Hitbox" type="Area2D" parent="."]

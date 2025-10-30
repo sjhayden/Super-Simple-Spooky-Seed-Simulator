@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends CharacterBody2D
 
 @onready var anim = $AnimatedSprite2D
 var hits_taken = 0
@@ -13,3 +13,6 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 		if hits_taken == 3:
 			GameManager.update_num_killed()
 			queue_free()
+
+func _physics_process(_delta: float) -> void:
+	move_and_slide()
