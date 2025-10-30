@@ -14,7 +14,6 @@ func _on_first_enemy_timer_timeout() -> void:
 	
 
 func spawn_enemy() -> void:
-	print("spawn")
 	# Create a new instance of the enemy scene.
 	var enemy:CharacterBody2D = enemy_scene.instantiate()
 
