@@ -1,31 +1,51 @@
-[gd_scene load_steps=8 format=3 uid="uid://qhjimvsiiqqs"]
+[gd_scene load_steps=11 format=3 uid="uid://qhjimvsiiqqs"]
 
 [ext_resource type="Script" uid="uid://b1ckcypceqqku" path="res://Scripts/corn_plant.gd" id="1_1m1ec"]
-[ext_resource type="Texture2D" uid="uid://dr63eb8783ddp" path="res://Assets/Tilemap_Placeholder_16x16.png" id="2_v4bum"]
+[ext_resource type="Texture2D" uid="uid://dsmsgbpjsmdm0" path="res://Assets/SpriteSheet16x16.png" id="2_v4bum"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rdd45"]
 size = Vector2(16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdd45"]
+atlas = ExtResource("2_v4bum")
+region = Rect2(64, 32, 16, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_mpcga"]
 atlas = ExtResource("2_v4bum")
-region = Rect2(0, 34, 16, 16)
+region = Rect2(80, 32, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r0w7h"]
 atlas = ExtResource("2_v4bum")
-region = Rect2(51, 34, 16, 16)
+region = Rect2(96, 32, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b73ak"]
 atlas = ExtResource("2_v4bum")
-region = Rect2(34, 34, 16, 16)
+region = Rect2(112, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpijp"]
+atlas = ExtResource("2_v4bum")
+region = Rect2(128, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hosdk"]
+atlas = ExtResource("2_v4bum")
+region = Rect2(144, 0, 16, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jpijp"]
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_rdd45")
+}],
+"loop": true,
+"name": &"eaten_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_mpcga")
 }],
 "loop": true,
-"name": &"full_grown",
+"name": &"eaten_2",
 "speed": 5.0
 }, {
 "frames": [{
@@ -33,12 +53,28 @@ animations = [{
 "texture": SubResource("AtlasTexture_r0w7h")
 }],
 "loop": true,
-"name": &"growing",
+"name": &"eaten_3",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_b73ak")
+}],
+"loop": true,
+"name": &"full_grown",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jpijp")
+}],
+"loop": true,
+"name": &"growing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hosdk")
 }],
 "loop": true,
 "name": &"sprout",
@@ -54,6 +90,7 @@ script = ExtResource("1_1m1ec")
 shape = SubResource("RectangleShape2D_rdd45")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -14)
 sprite_frames = SubResource("SpriteFrames_jpijp")
 animation = &"sprout"
 

@@ -1,21 +1,21 @@
 [gd_scene load_steps=9 format=3 uid="uid://c8fvy67786el2"]
 
 [ext_resource type="Script" uid="uid://ceduy1waepv2x" path="res://Scripts/jack_o_lantern.gd" id="1_giqco"]
-[ext_resource type="Texture2D" uid="uid://b5frltrdkrhpu" path="res://Assets/Characters.png" id="2_wb8q7"]
+[ext_resource type="Texture2D" uid="uid://dsmsgbpjsmdm0" path="res://Assets/SpriteSheet16x16.png" id="2_wb8q7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4ax6"]
 radius = 6.0
 height = 16.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_x61tp"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4ax6"]
 atlas = ExtResource("2_wb8q7")
 region = Rect2(32, 16, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ad81n"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_x61tp"]
 atlas = ExtResource("2_wb8q7")
 region = Rect2(48, 16, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8r162"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ad81n"]
 atlas = ExtResource("2_wb8q7")
 region = Rect2(16, 16, 16, 16)
 
@@ -23,7 +23,7 @@ region = Rect2(16, 16, 16, 16)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_x61tp")
+"texture": SubResource("AtlasTexture_g4ax6")
 }],
 "loop": true,
 "name": &"after_1_hit",
@@ -31,7 +31,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ad81n")
+"texture": SubResource("AtlasTexture_x61tp")
 }],
 "loop": true,
 "name": &"after_2_hits",
@@ -39,7 +39,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8r162")
+"texture": SubResource("AtlasTexture_ad81n")
 }],
 "loop": true,
 "name": &"default",
