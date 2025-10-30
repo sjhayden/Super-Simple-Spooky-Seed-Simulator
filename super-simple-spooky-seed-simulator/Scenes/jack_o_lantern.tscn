@@ -75,7 +75,11 @@ wait_time = 2.5
 autostart = true
 
 [node name="HesitationTimer" type="Timer" parent="."]
+wait_time = 0.7
 one_shot = true
+
+[node name="BiteTimer" type="Timer" parent="."]
+wait_time = 0.7
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="timeout" from="RecalibrationTimer" to="." method="_on_recalibration_timer_timeout"]
