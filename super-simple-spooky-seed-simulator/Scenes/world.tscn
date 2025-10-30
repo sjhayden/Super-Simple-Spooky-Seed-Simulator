@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dtncctudm55t6" path="res://Scenes/player.tscn" id="1_a02cp"]
 [ext_resource type="Texture2D" uid="uid://bsh4ctdvvmqwn" path="res://Assets/TileMap16x16.png" id="1_go701"]
 [ext_resource type="PackedScene" uid="uid://d3b2i1ulkyxcp" path="res://Scenes/plant_manager.tscn" id="3_5a7ea"]
-[ext_resource type="Script" uid="uid://dl1gu1m6ub3x0" path="res://Scripts/num_corn_label.gd" id="4_8j60k"]
+[ext_resource type="Script" path="res://Scripts/num_corn_label.gd" id="4_8j60k"]
 [ext_resource type="PackedScene" uid="uid://bmkisqapoqct4" path="res://Scenes/enemy_manager.tscn" id="5_fo5ed"]
 [ext_resource type="Script" uid="uid://btted7v7j3dam" path="res://Scripts/kill_count_label.gd" id="5_o06y3"]
 
@@ -51,5 +51,8 @@ offset_bottom = 48.0
 script = ExtResource("5_o06y3")
 
 [node name="enemy_manager" parent="." instance=ExtResource("5_fo5ed")]
+
+[node name="FirstEnemyTimer" parent="enemy_manager" index="2"]
+wait_time = 20.0
 
 [editable path="enemy_manager"]

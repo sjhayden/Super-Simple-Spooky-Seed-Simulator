@@ -8,4 +8,5 @@ func _ready():
 	update_kill_count_display(GameManager.get_kill_count())
 
 func update_kill_count_display(new_num: int):
-	text = "Kill Count: " + str(new_num)
+	if GameManager.get_kill_count() > 0:
+		text = "Kill Count: " + str(new_num)

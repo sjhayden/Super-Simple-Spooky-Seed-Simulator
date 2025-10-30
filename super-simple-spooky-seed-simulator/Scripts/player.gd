@@ -66,7 +66,7 @@ func perform_attack():
 #	var animation_name = ""
 	
 	var damage_zone_collision = damage_zone.get_node("Hitbox")
-	var wait_time = 0.2
+	var wait_time = 0.15
 	damage_zone_collision.disabled = false
 	await get_tree().create_timer(wait_time).timeout
 	damage_zone_collision.disabled = true
