@@ -109,8 +109,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6t5aa"]
-radius = 8.0
-height = 32.0
+radius = 3.0
+height = 16.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cvnsp"]
 radius = 14.0
@@ -126,7 +126,8 @@ sprite_frames = SubResource("SpriteFrames_fkybt")
 animation = &"walk_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -16)
+position = Vector2(0, -1)
+rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_6t5aa")
 
 [node name="DamageZone" type="Area2D" parent="."]
