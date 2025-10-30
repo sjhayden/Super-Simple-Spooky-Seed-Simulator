@@ -9,6 +9,7 @@ _data = {
 point_count = 4
 
 [node name="enemy_manager" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_xf0q5")
 
 [node name="SpawningPath" type="Path2D" parent="."]

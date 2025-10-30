@@ -21,6 +21,7 @@ custom_data_layer_0/type = 1
 sources/0 = SubResource("TileSetAtlasSource_5a7ea")
 
 [node name="World" type="Node2D"]
+y_sort_enabled = true
 scale = Vector2(3, 3)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -32,6 +33,7 @@ position = Vector2(167.66667, 35.333332)
 plant_manager = NodePath("../plant_manager")
 
 [node name="plant_manager" parent="." node_paths=PackedStringArray("tile_map") instance=ExtResource("3_5a7ea")]
+y_sort_enabled = true
 tile_map = NodePath("../TileMapLayer")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

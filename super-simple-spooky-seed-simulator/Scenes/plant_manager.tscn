@@ -3,4 +3,5 @@
 [ext_resource type="Script" uid="uid://bjgajdls8jnmu" path="res://Scripts/plant_manager.gd" id="1_lrdcu"]
 
 [node name="plant_manager" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_lrdcu")
